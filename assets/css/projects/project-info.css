@@ -1,0 +1,17 @@
+.project__info > .content__title {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 0) {
+    .project__info {
+        width: 100%;
+        margin-top: var(--spacing);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .project__info {
+        width: 50%;
+        margin-top: 0;
+    }
+}

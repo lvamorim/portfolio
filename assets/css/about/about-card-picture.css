@@ -1,0 +1,16 @@
+.card__picture {
+    border: 5px solid transparent;
+    border-radius: 100%;
+    box-shadow: 0 0 5px var(--contrast3);
+    filter: var(--filter-images);
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card__picture:hover {
+    box-shadow: 0 0 5px;
+    filter: none;
+    transform: rotate(5deg);
+    transition: 1s, filter 3s;
+}

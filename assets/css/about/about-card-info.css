@@ -1,0 +1,19 @@
+.card__info {
+    display: flex;
+    padding: var(--spacing);
+}
+
+@media screen and (min-width: 0) {
+    .card__info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: calc(var(--spacing) * 2);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card__info {
+        flex-wrap: wrap;
+        gap: calc(var(--spacing) * 3);
+    }
+}

@@ -1,0 +1,9 @@
+.card__header {
+    background-color: var(--contrast2);
+    border-radius: var(--large-shape) var(--large-shape) 0 0;
+    color: var(--contrast1);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px 0;
+}

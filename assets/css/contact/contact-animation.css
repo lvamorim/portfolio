@@ -1,0 +1,13 @@
+@media screen and (min-width: 0) {
+    .contact__animation {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .contact__animation {
+        display: flex;
+        justify-content: center;
+        height: 225px;
+    }
+}

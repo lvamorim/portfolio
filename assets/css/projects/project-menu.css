@@ -1,0 +1,6 @@
+.project__menu {
+    display: flex;
+    gap: 5px;
+    text-align: center;
+    margin-top: var(--spacing);
+}

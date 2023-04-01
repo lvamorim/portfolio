@@ -1,0 +1,16 @@
+.contact__container > fieldset {
+    margin-bottom: var(--spacing);
+}
+
+@media screen and (min-width: 992px) {
+    .contact__container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--spacing);
+    }
+
+    .contact__container > fieldset {
+        width: 50%;
+    }
+}

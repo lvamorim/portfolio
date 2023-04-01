@@ -1,0 +1,83 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.email__container {
+    background-color: var(--contrast1);
+    border-radius: var(--large-shape);
+    box-shadow: 0 0 5px var(--contrast3);
+    padding: calc(var(--spacing) * 2);
+}
+
+.section__title {
+    display: flex;
+    gap: var(--spacing);
+    letter-spacing: 2.5px;
+    text-align: left;
+    margin: 0;
+}
+
+.email__icon {
+    position: relative;
+    width: 25px;
+    opacity: 0;
+    animation: paperPlane 3s linear infinite;
+}
+
+@keyframes paperPlane {
+    0% {
+        left: 0;
+        bottom: 10px;
+        opacity: 1;
+    }
+
+    25% {
+        transform: rotate(40deg);
+    }
+
+    50% {
+        left: 60px;
+        bottom: 0;
+    }
+
+    75% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        left: 90px;
+        bottom: 10px;
+        width: 20px;
+    }
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing);
+    width: 100%;
+    max-width: fit-content;
+    height: 50px;
+    padding: 0 var(--spacing);
+    margin-top: calc(var(--spacing)* 2);
+}
+
+.arrow__icon {
+    filter: var(--filter-secondary);
+    width: 40px;
+}
+
+@media screen and (min-width: 0) {
+    .email__icon {
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .email__icon {
+        visibility: visible;
+    }
+}

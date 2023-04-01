@@ -1,0 +1,30 @@
+.code__class {
+    color: var(--code-class);
+}
+
+.code__braces {
+    color: var(--code-braces);
+}
+
+.code__line {
+    display: block;
+    text-indent: 50px;
+}
+
+.code__property {
+    color: var(--code-property);
+}
+
+.code__string {
+    color: var(--code-string);
+}
+
+.code__punctuation {
+    color: var(--code-punctuation);
+}
+
+.typed-cursor {
+    color: var(--code-punctuation);
+    font-weight: bold;
+    margin-left: -10px;
+}

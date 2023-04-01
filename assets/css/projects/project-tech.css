@@ -1,0 +1,18 @@
+.project__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    margin-top: calc(var(--spacing) / 2);
+}
+
+.tech__box {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) / 3);
+    font-size: .875rem;
+}
+
+.tech__icon {
+    filter: var(--filter-secondary);
+    width: 20px;
+}

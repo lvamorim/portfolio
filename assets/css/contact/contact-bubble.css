@@ -1,0 +1,22 @@
+@media screen and (min-width: 768px) {
+    .bubble {
+        --color: var(--contrast3);
+        background-color: var(--color);
+        border-radius: var(--large-shape);
+        position: relative;
+        width: 150px;
+        height: fit-content;
+        padding: 0 var(--spacing) var(--spacing);
+        animation: bubbleJump 2s infinite alternate;
+    }
+
+    @keyframes bubbleJump { from { top: 15px; } to { top: 0; } }
+    
+    .bubble::before {
+        content: "";
+        border-top: 20px solid var(--color);
+        border-right: 20px solid transparent;
+        position: absolute;
+        top: 99%;
+    }
+}

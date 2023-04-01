@@ -1,0 +1,4 @@
+.toggle__icon {
+    filter: var(--filter-secondary);
+    width: 100%;
+}

@@ -1,0 +1,11 @@
+.home__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+    text-align: end;
+    margin-top: var(--spacing);
+}
+
+.text__welcome {
+    font-size: 1.75rem;
+}

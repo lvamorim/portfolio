@@ -1,0 +1,12 @@
+.input__field {
+    background-color: var(--secondary);
+    border-bottom: 3px solid var(--contrast3);
+    border-radius: var(--small-shape);
+    width: 100%;
+    padding: calc(var(--spacing) / 2);
+    padding-top: calc(var(--spacing) * 1.5);
+}
+
+.input__field:focus {
+    border-bottom: 3px solid var(--accent1);
+}

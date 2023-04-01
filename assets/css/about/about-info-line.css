@@ -1,0 +1,15 @@
+.info__line:not(:first-child) {
+    margin-top: 10px;
+}
+
+.info__line::before {
+    content: '★';
+    color: var(--accent1);
+    display: inline-block;
+    margin-right: 5px;
+    animation: starSpin 5s linear infinite;
+}
+
+@keyframes starSpin {
+    100% {transform: rotate(2turn);}
+}

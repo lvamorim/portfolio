@@ -1,0 +1,4 @@
+.email__icon {
+    filter: var(--filter-secondary);
+    width: 30px;
+}

@@ -1,0 +1,35 @@
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--secondary);
+    font-family: var(--font-logo);
+}
+
+.logo--header {
+    font-size: 2rem;
+}
+
+.logo--footer {
+    font-size: 1.125rem;
+    padding-bottom: 2px;
+}
+
+.logo__img {
+    filter: var(--filter-secondary);
+}
+
+.logo__img--header {
+    width: 35px;
+}
+
+.logo__img--footer {
+    width: 20px;
+}
+
+.logo--header:hover > .logo__img--header {
+    filter: var(--filter-accent1);
+}
+
+.logo--footer:hover > .logo__img--footer {
+    filter: var(--filter-accent1);
+}

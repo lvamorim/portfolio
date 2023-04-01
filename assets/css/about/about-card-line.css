@@ -1,0 +1,10 @@
+.card__line {
+    display: block;
+    --spacing: 10px;
+}
+
+.card__line:not(:first-child) {
+    border-top: 1px solid var(--contrast2);
+    padding-top: var(--spacing);
+    margin-top: var(--spacing);
+}

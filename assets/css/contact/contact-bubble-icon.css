@@ -1,0 +1,7 @@
+@media screen and (min-width: 768px) {
+    .bubble__icon {
+        align-self: end;
+        filter: var(--filter-contrast3);
+        width: 150px;
+    }
+}

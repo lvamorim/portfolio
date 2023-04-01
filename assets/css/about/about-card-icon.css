@@ -1,0 +1,6 @@
+.card__icon {
+    filter: var(--filter-secondary);
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}

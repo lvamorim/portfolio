@@ -1,0 +1,9 @@
+.about__card {
+    background-color: var(--contrast1);
+    outline: 2px solid var(--contrast2);
+    border-radius: var(--large-shape);
+    box-shadow: var(--box-shadow);
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+}

@@ -1,0 +1,5 @@
+.project__description {
+    color: var(--contrast3);
+    font-size: .875rem;
+    margin-top: calc(var(--spacing) / 2);
+}

@@ -1,0 +1,10 @@
+.box__icon {
+    filter: var(--filter-secondary);
+    width: 50px;
+    margin-bottom: var(--spacing);
+}
+
+.box__icon[alt="Tablet de desenho"], 
+.box__icon[alt="Paleta de pintura"] {
+    width: 40px;
+}

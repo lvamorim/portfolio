@@ -1,0 +1,12 @@
+.error, .error > .input__label {
+    color: var(--error);
+}
+
+.error > .input__field {
+    border: 3px solid var(--error);
+    margin-bottom: 5px;
+}
+
+.error__message {
+    font-weight: 600;
+}

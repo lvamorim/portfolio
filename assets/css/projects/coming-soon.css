@@ -1,0 +1,6 @@
+.coming-soon {
+    content: '/* Em breve! */';
+    font-family: var(--font-code);
+    color: var(--code-comment);
+    font-weight: bold;
+}

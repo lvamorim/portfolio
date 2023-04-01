@@ -1,0 +1,21 @@
+.project__image {
+    aspect-ratio: 16 / 9;
+    filter: var(--filter-images);
+}
+
+.project__box:hover > .project__image {
+    filter: none;
+    transition: 1s;
+}
+
+@media screen and (min-width: 0) {
+    .project__image {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .project__image {
+        width: 50%;
+    }
+}

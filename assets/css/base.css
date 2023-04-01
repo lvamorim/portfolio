@@ -1,0 +1,86 @@
+@import url(normalize.css);
+@import url(reset.css);
+@import url(variables.css);
+@import url(container.css);
+@import url(logo.css);
+@import url(buttons.css);
+@import url(menu-contact.css);
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url(/assets/img/texture-dust.png);
+    background-color: var(--primary);
+    box-shadow: inset 0 0 0 2000px #00000080;
+    color: var(--secondary);
+    font-family: var(--font-primary);
+}
+
+body::-webkit-scrollbar, body::-webkit-scrollbar-corner {
+    background-color: var(--primary);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--contrast3);
+    border-radius: var(--large-shape);
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+header, .header__menu.active, footer {
+    background-color: var(--contrast1);
+    box-shadow: 0 0 3px var(--contrast3);
+}
+
+input, textarea {
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing);
+}
+
+section {
+    padding-top: var(--header-footer-size);
+}
+
+.section__title {
+    font-family: var(--font-secondary);
+    font-size: var(--section-title-size);
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: var(--section-title-spacing) 0;
+}
+
+.content__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: var(--spacing);
+}
+
+.content__subtitle {
+    margin-top: calc(var(--spacing) / 2);
+}

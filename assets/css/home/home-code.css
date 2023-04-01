@@ -1,0 +1,30 @@
+.home__code {
+    background-color: #1E1E1E;
+    border-radius: var(--medium-shape);
+    box-shadow: var(--box-shadow);
+    font-family: var(--font-code);
+    --font-calc: 1.5;
+    line-height: 120%;
+    white-space: normal;
+    height: fit-content;
+    padding: var(--spacing);
+}
+
+@media screen and (max-width: 409px) {
+    .home__code {
+        display: none;
+    }    
+}
+
+@media screen and (min-width: 410px) {
+    .home__code {
+        width: 320px;
+    }    
+}
+
+@media screen and (min-width: 768px) {
+    .home__code {
+        font-size: calc(1rem * var(--font-calc));
+        width: 500px;
+    }  
+}
