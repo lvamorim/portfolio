@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    background: url(/assets/img/texture-dust.png);
+    background: url(../img/texture-dust.png);
     background-color: var(--primary);
     box-shadow: inset 0 0 0 2000px #00000080;
     color: var(--secondary);
