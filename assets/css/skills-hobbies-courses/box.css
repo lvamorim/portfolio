@@ -15,28 +15,3 @@
     background: var(--gradient);
     box-shadow: 0 0 5px;
 }
-
-
-@media screen and (min-width: 0) {
-    .box:not(.box--courses) {
-        width: calc(50% - (var(--spacing) / 2));
-    }
-}
-
-@media screen and (min-width: 550px) {
-    .box:not(.box--courses) {
-        width: calc(33.33% - (var(--spacing) / 1.5));
-    }
-}
-
-@media screen and (min-width: 750px) {
-    .box:not(.box--courses) {
-        width: calc(25% - (var(--spacing) / 1.33));
-    }
-}
-
-@media screen and (min-width: 950px) {
-    .box:not(.box--courses) {
-        width: calc(20% - (var(--spacing) / 1.25));
-    }
-}

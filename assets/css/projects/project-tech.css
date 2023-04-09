@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing);
-    margin-top: calc(var(--spacing) / 2);
+    margin-top: var(--spacing);
 }
 
 .tech__box {
