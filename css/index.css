@@ -565,7 +565,7 @@ section#home .button-group {
 }
 
 section#about .card {
-  background-image: url("../../img/paper.jpg");
+  background-image: url("./../img/paper.jpg");
   background-blend-mode: darken;
   background-color: #0e0e0e;
   padding: 1rem;
