@@ -1,0 +1,120 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+@mixin cornerPosition($left-corner: false, $right-corner: false)
+  $left: .3rem
+  $left-inverted: $left * -1
+  $right: .25rem
+  $right-inverted: $right * -1
+
+  @if $left-corner
+    top: $left
+    left: $left-inverted
+  
+  @if $right-corner
+    bottom: $right-inverted
+    right: $right
+
+section#contact .content
+  @include desktop
+    @include flex($between: true, $center: true, $gap: true)
+  
+    & > *
+      @include flex($grow: true)
+
+  .phone-wrapper
+    @keyframes kick
+      $rotate: -20deg
+      $move: 10%
+      $inverted-move: calc($move * -1)
+      from
+        rotate: $rotate
+      to
+        rotate: $rotate
+        transform: translate($move, $inverted-move)
+    
+    $width: 10rem
+    $height: calc($width * 2)
+    animation: kick 2s alternate infinite
+    filter: drop-shadow(0 0 2rem $text-contrast-color)
+    width: $width
+    height: $height
+    margin: 3rem auto
+    @include desktop
+      margin: auto 3rem
+
+    // phone corners
+    &::before, &::after, .phone::before
+      content: ''
+      background-color: #555
+      position: absolute
+      z-index: -1
+    
+    &::before, &::after
+      $corner-size: 1.75rem
+      border-radius: 1rem
+      width: $corner-size
+      height: $corner-size
+      rotate: 47deg
+    
+    &::before
+      @include cornerPosition($left-corner: true)
+    
+    &::after
+      @include cornerPosition($right-corner: true)
+
+    // phone screen
+    .phone
+      background-color: $background-contrast-color
+      border: 1rem solid $background-contrast-color
+
+      // phone shadow
+      &, &::before
+        border-radius: 1rem
+        width: 100%
+        height: 100%
+      
+      &::before
+        box-shadow: .5rem -.5rem .1rem currentColor, 0 0 1rem $background-contrast-color
+        transform: translate(-1.5rem, -.5rem)
+      
+      // phone screen apps
+      .status-bar, .nav-bar
+        $font-size: .5rem
+        $padding: .25rem
+        $height: calc($font-size * 3 + $padding * 4)
+        padding: $padding
+        @include font($custom-size: $font-size)
+      
+      .status-bar, .nav-bar ul
+        @include flex($between: true, $center: true)
+
+      .status-bar li
+        display: inline
+
+        &:last-child
+          margin-left: .25rem
+      
+      nav
+        display: grid
+        place-items: center
+        height: calc(100% - $height)
+        overflow: auto
+        @include font($custom-size: 3rem)
+
+        li
+          &:not(:first-child)
+            margin-top: $spacing
+
+          &:hover
+            scale: 1.2
+        
+        a
+          padding: .05rem .75rem
+          border-radius: 1rem
+        
+          &[aria-label='WhatsApp']
+            background-color: #28D146
+          
+          &[aria-label='LinkedIn']
+            background-color: #0077b5

@@ -1,0 +1,15 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+.button-group ul
+  @include flex($wrap: true, $gap: true)
+
+  li
+    @include flex($grow: true)
+  
+    a
+      @include button
+    
+    &:not(:first-child)
+      a
+        @include button($secondary: true)

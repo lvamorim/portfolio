@@ -1,0 +1,16 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+footer
+  p
+    @include font($size: small)
+  
+  button, a
+    padding: .5rem 1rem
+    @include font($size: medium)
+  
+  nav ul
+    @include flex($between: true, $gap: true)
+
+    a
+      display: block

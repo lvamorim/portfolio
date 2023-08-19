@@ -1,0 +1,8 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+.thanks, .back-home
+  margin-top: $spacing
+
+.back-home
+  @include button($not-full: true)

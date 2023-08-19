@@ -1,0 +1,148 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+section#about
+  .card
+    background-image: url('../../img/paper.jpg')
+    background-blend-mode: darken
+    background-color: $background-color
+    padding: 1rem
+    margin: 0 auto
+    @include flex($wrap: true, $center: true)
+    gap: 0 $spacing * 2
+    @include shape
+    
+    .images
+      @mixin stickers($top: null, $left: null, $bottom: null, $right: null, $size: null, $rotate: null)
+        position: absolute
+        top: $top
+        left: $left
+        bottom: $bottom
+        right: $right
+        width: $size
+        rotate: ($rotate)
+      
+      position: relative
+      max-width: 14rem
+      margin: 0 auto
+
+      *
+        filter: drop-shadow(.1rem .1rem .1rem $background-contrast-color)
+
+      .avatar
+        border-radius: 50%
+        width: 100%
+        transition: rotate 1s
+
+        &:hover
+          rotate: 15deg
+
+          & ~ *
+            transition: all 2s
+
+            &.stars
+              rotate: -30deg
+            
+            &.smiley
+              rotate: -20deg
+            
+            &.l, &.v
+              scale: 1.2
+      
+      .stars
+        @include stickers($bottom: 10%, $left: 0, $size: 2rem, $rotate: -15deg)
+      
+      .smiley
+        @include stickers($top: 5%, $right: 5%, $size: 2.5rem, $rotate: 15deg)
+      
+      .l
+        @include stickers($bottom: 5%, $right: 20%, $size: 2rem, $rotate: -10deg)
+      
+      .v
+        @include stickers($bottom: 5%, $right: 5%, $size: 2rem, $rotate: 15deg)
+    
+    ul
+      @include flex($grow: true)
+    
+      li
+        padding: 1rem 0
+        @include divider
+      
+      i
+        vertical-align: middle
+        margin-right: $spacing
+        @include font($size: medium)
+
+        &.fa-hourglass-half
+          margin-right: 1.25rem
+        
+        &.fa-graduation-cap
+          @include font($custom-size: 1.25rem)
+
+  .info
+    @include desktop
+      @include flex($gap: true)
+    
+    & > *
+      width: 100%
+    
+    h3
+      margin-top: $spacing * 2
+      margin-bottom: $spacing / 2
+      @include font($custom-size: 1.25rem, $center: true)
+      @include desktop
+        margin-top: 0
+    
+    a
+      margin-top: $spacing
+      margin-bottom: $spacing * 3
+      min-width: fit-content
+      max-width: 50%
+      @include button
+      @include desktop
+        margin-bottom: 0
+  
+  .about
+    text-align: justify
+
+    li
+      &:not(:first-child)
+        margin-top: 1rem
+        @include desktop
+          margin-top: .5rem
+      
+      &::before
+        @keyframes spin
+          to
+            rotate: 360deg
+        
+        content: '\2605'
+        animation: spin 2s linear infinite
+        display: inline-block
+        margin-right: $spacing
+        @include font($color: primary)
+  
+  .skills
+    $icon-size: 3rem
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr))
+    gap: $spacing / 2
+    
+    li
+      padding: .5rem 0
+      text-overflow: ellipsis
+      overflow: hidden
+      white-space: nowrap
+      @include font($size: small, $center: true)
+
+      i, svg
+        display: block
+    
+      i
+        @include font($custom-size: $icon-size)
+      
+      svg
+        fill: $text-color
+        width: $icon-size
+        height: $icon-size
+        margin: 0 auto

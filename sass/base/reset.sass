@@ -1,0 +1,47 @@
+@use 'variables' as *
+@use 'mixins' as *
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+:root
+  background-color: $background-color
+  scroll-behavior: smooth
+  @include font($family: primary, $color: initial)
+
+header, footer
+  background-color: $background-contrast-color
+  
+  .container
+    @include flex($between: true, $center: true)
+
+h1
+  @include font($family: logo)
+
+a
+  text-decoration: none
+  @include font($color: inherit)
+
+fieldset
+  border: none
+
+button, input, textarea
+  border: none
+  @include font($family: inherit, $color: inherit, $size: inherit)
+
+button
+  background-color: transparent
+  cursor: pointer
+  padding: 0 1rem
+
+input, textarea
+  &:focus-visible
+    outline: 1px solid currentColor
+
+textarea
+  resize: none
+
+ul
+  list-style: none

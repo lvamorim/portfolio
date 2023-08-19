@@ -1,0 +1,35 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+$section-padding: $spacing
+$title-font-size: 1.75rem
+$title-margin: 1.5rem
+$title-height: $title-font-size + $title-margin
+$full-height: 100vh
+$header-height: 4rem
+$footer-height: 3.75rem
+
+section
+  padding: $section-padding 0
+  
+  h2
+    letter-spacing: .5rem
+    margin-top: $header-height
+    margin-bottom: $title-margin
+    @include font($family: secondary, $custom-size: $title-font-size, $center: true, $uppercase: true)
+  
+  .content
+    display: grid
+    align-content: center
+    gap: $spacing
+    min-height: calc($full-height - $header-height - ($section-padding * 2) - $title-height)
+
+    &.not-spaced
+      align-content: start
+
+    &:first-child
+      padding-top: $header-height
+      min-height: calc($full-height - ($section-padding * 2))
+  
+  &:last-child .content
+    min-height: calc($full-height - $header-height - ($section-padding * 2) - $title-height - $footer-height)

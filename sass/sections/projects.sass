@@ -1,0 +1,35 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+section#projects
+  .content
+    @include flex($center: true)
+  
+  .projects
+    img
+      display: block
+      width: 100%
+      max-width: 25rem
+      margin: 0 auto
+
+    h3
+      @include font($size: medium)
+    
+    .techs
+      $icon-size: 1.25rem
+      margin: $spacing 0
+      @include font($size: small)
+      @include flex($wrap: true)
+      gap: $spacing / 2 $spacing * 2
+
+      li
+        @include flex($center: true)
+        gap: $spacing / 2
+      
+      i
+        @include font($custom-size: $icon-size)
+      
+      svg
+        fill: $text-color
+        width: $icon-size
+        height: $icon-size

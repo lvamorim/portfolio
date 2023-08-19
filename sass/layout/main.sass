@@ -1,0 +1,11 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+  
+main
+  &.blur
+    filter: blur(.25rem)
+    transition: filter 1s
+
+    @include desktop
+      filter: none
+      transition: none

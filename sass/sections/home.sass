@@ -1,0 +1,14 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+section#home
+  .presentation
+    line-height: 130%
+    @include font($custom-size: 2.5rem)
+
+  .name
+    display: block
+    @include font($color: primary, $custom-size: 3.5rem)
+  
+  .button-group
+    max-width: 500px

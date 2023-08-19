@@ -1,0 +1,58 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+form fieldset
+  & > *:not(button)
+    margin-bottom: $spacing
+  
+  .field-wrapper
+    position: relative
+
+    input, textarea, label
+      background-color: $background-color
+
+    label
+      border-top-left-radius: $shape
+      border-top-right-radius: $shape
+      position: absolute
+      left: 0
+      width: 100%
+      padding-top: .25rem
+      @include font($bold: true)
+    
+      i
+        margin: 0 $spacing
+    
+    input, textarea
+      border-bottom: 2px solid transparent
+      padding: 2rem 1rem .5rem
+      width: 100%
+      transition: border .3s ease-in-out
+      @include shape($left-shadow: true)
+      
+      &:required + label::after
+        content: '*'
+        @include font($color: primary)
+        margin-left: .5rem
+    
+    &.success
+      input, textarea
+        border-bottom-color: $success-color
+    
+    &.error
+      input, textarea
+        border-bottom-color: $error-color
+      
+      .error-message
+        display: block
+        margin-top: .5rem
+        margin-left: $spacing
+        @include font($color: error)
+        @include icon($content: f071)
+    
+    .error-message
+      @include hidden
+    
+  button
+    margin-left: auto
+    @include button

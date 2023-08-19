@@ -1,0 +1,127 @@
+@use 'variables' as *
+
+@mixin font($family: null, $color: null, $size: null, $custom-size: null, $center: false, $bold: false, $uppercase: false)
+  $font-families: (inherit: inherit, primary: ('Poppins', sans-serif), secondary: ('Crimson Text', serif), logo: ('Playfair Display', serif), icon: 'Font Awesome 6 free')
+  $colors: (initial: $text-color, inherit: inherit, contrast: $text-contrast-color, primary: $primary-color, error: $error-color)
+  $sizes: (inherit: inherit, small: .75rem, medium: 1.5rem)
+  
+  color: map-get($colors, $color)
+  font-family: map-get($font-families, $family)
+  font-size: if($custom-size, $custom-size, map-get($sizes, $size))
+  
+  @if $center
+    text-align: center
+  
+  @if $bold
+    font-weight: bold
+  
+  @if $uppercase
+    text-transform: uppercase
+  
+  @if $family == logo
+    font-size: 3rem
+  
+  @if $family == icon
+    font-weight: bolder
+
+
+
+@mixin mobile
+  @media (min-width: 0)
+    @content
+
+@mixin desktop
+  @media (min-width: 768px)
+    @content
+
+
+
+@mixin shape($left-shadow: false, $no-shadow: false)
+  $dark-shadow: .25rem .25rem .5rem $background-contrast-color
+  $light-shadow: -.1rem -.1rem .25rem $text-contrast-color
+  border-radius: $shape
+  box-shadow: $dark-shadow
+
+  @if $left-shadow
+    box-shadow: $light-shadow, $dark-shadow
+  
+  @if $no-shadow
+    border-radius: $shape
+    box-shadow: none
+
+
+
+@mixin divider($remove: false)
+  $divider: 1px solid $text-contrast-color
+  
+  &:not(:first-child)
+    border-top: $divider
+
+    @if $remove
+      border: none
+
+
+
+@mixin button($secondary: false, $not-full: false)
+  $secondary-color: lighten(desaturate($primary-color, 15%), 7.5%)
+  $hover-color: 15%
+  display: block
+  padding: .5rem 1rem
+  width: if($not-full, fit-content, initial)
+  @include font($center: true,$bold: true, $uppercase: true)
+  @include shape
+  
+  &:hover
+    transition: background-color .5s
+  
+  &[aria-disabled='true']
+    background-color: $text-contrast-color
+    cursor: not-allowed
+    pointer-events: none
+
+  i
+    margin-right: $spacing
+  
+  @if $secondary
+    background-color: $secondary-color
+
+    &:hover
+      background-color: darken($secondary-color, $hover-color)
+  
+  @else
+    background-color: $primary-color
+    
+    &:hover
+      background-color: darken($primary-color, $hover-color)
+
+
+
+@mixin icon($content, $no-spacing: false)
+  &::before
+    content: unquote('\'\\#{$content}\'')
+    @include font($family: 'icon')
+    margin-right: $spacing
+
+    @if $no-spacing
+      margin-right: 0
+
+
+
+@mixin flex($wrap: false, $between: false, $center: false, $gap: false, $grow: false)
+  display: flex
+  flex-wrap: if($wrap, wrap, initial)
+  justify-content: if($between, space-between, initial)
+  align-items: if($center, center, initial)
+  gap: if($gap, $spacing, initial)
+  
+  @if $grow
+    display: initial
+    flex-grow: 1
+
+
+
+@mixin hidden($remove: false)
+  display: none
+  
+  @if $remove
+    display: initial

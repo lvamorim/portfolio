@@ -1,0 +1,90 @@
+@use '../base/variables' as *
+@use '../base/mixins' as *
+
+header
+  position: fixed
+  width: 100%
+  z-index: 9999 !important
+
+  button
+    @include font($custom-size: 2rem)
+    @include icon($content: f00d, $no-spacing: true)
+
+    &.open
+      @include icon($content: f0c9, $no-spacing: true)
+    
+    @include desktop
+      @include hidden
+  
+  a
+    @include font($bold: true, $uppercase: true)
+    
+  a:not(nav a)
+    i
+      margin-right: .5rem
+  
+  nav
+    @keyframes slideDown
+      from
+        max-height: 0
+        overflow: hidden
+      
+      to
+        max-height: 500px
+    
+    animation: slideDown 1s linear
+    background-color: $background-contrast-color
+    position: absolute
+    top: 100%
+    left: 0
+    right: 0
+    width: 100%
+    @include desktop
+      animation: none
+      background-color: transparent
+      position: initial
+      width: initial
+      flex-grow: .5
+    
+    &.hidden
+      @include hidden
+      @include desktop
+        @include hidden($remove: true)
+
+    ul
+      @include desktop
+        @include flex($between: true)
+
+      li
+        @include divider
+        @include desktop
+          @include divider($remove: true)
+
+        a
+          display: block
+          padding: 1rem 0
+          @include font($center: true)
+          @include desktop
+            padding: .5rem
+
+          &:hover
+            background-color: $primary-color
+            transition: background-color 1s
+            @include desktop
+              background-color: initial
+              transition: color .5s
+
+          &.active
+            @include desktop
+              &::after
+                @keyframes line
+                  from
+                    width: 0
+                  to
+                    width: 100%
+                
+                content: ''
+                animation: line .3s linear
+                background-color: $primary-color
+                display: block
+                height: 2px
